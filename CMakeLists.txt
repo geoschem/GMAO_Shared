@@ -18,14 +18,14 @@ if ( NOT HERMES_LIGHT )
      GMAO_stoch
    
      GEOS_Pert
-     GMAO_mfhdf3
-     GMAO_gfioeos
-     GMAO_ods
+     #GMAO_mfhdf3
+     #GMAO_gfioeos
+     #GMAO_ods
      GMAO_psas
-     GMAO_gems
-     GMAO_iret
+     #GMAO_gems
+     #GMAO_iret
      GMAO_pyobs
-     GMAO_radmon
+     #GMAO_radmon
    
      GMAO_ncdiag
      arpack
