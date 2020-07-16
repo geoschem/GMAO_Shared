@@ -7,6 +7,7 @@ esma_add_subdirectories(GMAO_hermes)
 
 if ( NOT HERMES_LIGHT )
 
+   # GCHP: comment out subdirectories not needed in GCHP 
    esma_add_subdirectories(
      GMAO_mpeu
      GMAO_pilgrim
