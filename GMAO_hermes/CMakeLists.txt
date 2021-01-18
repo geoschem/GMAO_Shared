@@ -3,7 +3,13 @@ esma_set_this()
 add_definitions (-DHERMES -DDEBUG_SHAVE -Dunix -D__unix__)
 string (REPLACE " " ";" flags ${FREAL8})
 add_compile_options(${flags})
-set (CMAKE_Fortran_FLAGS_RELEASE "-O3 ${common_Fortran_flags} ${ALIGNCOM} ${MISMATCH}")
+
+# Allow shell-like quoted compiler options
+# target_compile_options is initialized by COMPILE_OPTIONS directory property
+separate_arguments(Fortran_FLAGS_RELEASE UNIX_COMMAND "-O3 ${common_Fortran_flags} ${ALIGNCOM} ${MISMATCH}")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+   PROPERTY COMPILE_OPTIONS $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:Fortran>>:${Fortran_FLAGS_RELEASE}> 
+)
 
 if ( NOT HERMES_LIGHT )
 
