@@ -48,6 +48,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories (${BASEDIR}/lib)
 include_directories (${include_${this}})
 include_directories (${INC_NETCDF})
+include_directories (${NETCDF_F77_INCLUDE_DIR})
 
 if (F2PY_FOUND)
    if (precision STREQUAL "r4")
